@@ -12,15 +12,14 @@ public class Proposta {
     @Id
     @GeneratedValue
     private Long id;
+
     private String nome;
-    private String cpf;
+
+    private String documento;
+
     private String email;
 
-    public Proposta(String nome, String cpf, String email) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-    }
+    private Endereco endereco;
 
     public Long getId() {
         return id;
@@ -30,11 +29,22 @@ public class Proposta {
         return nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getDocumento() {
+        return documento;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public Proposta(String nome, String documento, String email, Endereco endereco) {
+        this.nome = nome;
+        this.documento = documento;
+        this.email = email;
+        this.endereco = endereco;
     }
 }
