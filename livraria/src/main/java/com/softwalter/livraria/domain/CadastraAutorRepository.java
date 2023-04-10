@@ -1,2 +1,6 @@
-package com.softwalter.livraria.domain;public interface CadastraAutorRepository {
+package com.softwalter.livraria.domain;
+
+public interface CadastraAutorRepository {
+
+    Autor salva(Autor autor);
 }
