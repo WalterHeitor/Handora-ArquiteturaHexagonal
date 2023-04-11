@@ -1,5 +1,8 @@
 package br.com.zup.edu.cineminha.application.sessao;
 
+import br.com.zup.edu.cineminha.domain.filme.Filme;
+import br.com.zup.edu.cineminha.domain.sala.Sala;
+import br.com.zup.edu.cineminha.domain.sessao.DadosSessao;
 import br.com.zup.edu.cineminha.domain.sessao.Sessao;
 import br.com.zup.edu.cineminha.adapters.persistence.filme.FilmeRepository;
 import br.com.zup.edu.cineminha.adapters.persistence.sala.SalaRepository;
@@ -9,7 +12,7 @@ import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 
-public class NovaSessaoRequest {
+public class NovaSessaoRequest implements DadosSessao {
 
     @NotNull
     private LocalTime horario;
@@ -39,12 +42,9 @@ public class NovaSessaoRequest {
         return preco;
     }
 
-    public Sessao toModel(SalaRepository salas, FilmeRepository filmes) {
 
-        var sala = salas.findById(salaId).orElseThrow(() -> new IllegalStateException("Sala nao existe"));
-        var filme = filmes.findById(filmeId).orElseThrow(() -> new IllegalStateException("Filme nao existe"));
-
+    @Override
+    public Sessao toModel(Sala sala, Filme filme) {
         return new Sessao(horario, sala, filme, preco);
-
     }
 }
