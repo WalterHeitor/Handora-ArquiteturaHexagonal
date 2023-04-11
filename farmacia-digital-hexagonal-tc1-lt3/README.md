@@ -52,7 +52,6 @@ curl --request POST \
 ```shell
 curl --request POST \
   --url http://localhost:8080/remedios \
-  --header 'Authorization: Bearer <access_token>' \
   --header 'Content-Type: application/json' \
   --data '{
   "nome": "Aspirina",
