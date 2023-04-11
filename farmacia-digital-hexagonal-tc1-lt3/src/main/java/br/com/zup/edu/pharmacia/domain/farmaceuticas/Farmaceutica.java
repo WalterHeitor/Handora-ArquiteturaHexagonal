@@ -35,7 +35,7 @@ public class Farmaceutica {
     @NotBlank
     private String telefonePrincipal;
 
-    @OneToMany(mappedBy = "remedio", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "farmaceutica", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Remedio> remedios = new ArrayList<Remedio>();
 
     public Farmaceutica(String nome,

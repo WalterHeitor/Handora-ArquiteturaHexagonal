@@ -24,7 +24,7 @@ public class CadastraRemedioController {
     @PostMapping
     public ResponseEntity<?> cadastra(@RequestBody @Valid NovoRemedioRequest request,
                                       UriComponentsBuilder uriBuilder) {
-        var farmacia = service.getByIdFarmacia(request.famaciaId());
+        var farmacia = service.getByIdFarmacia(request.farmaciaId());
 
         var categoria = service.getByIdCategoria(request.categoriaId());
 

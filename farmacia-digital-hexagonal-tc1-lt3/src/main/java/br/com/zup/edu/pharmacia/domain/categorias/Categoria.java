@@ -21,7 +21,7 @@ public class Categoria {
     @Column(unique = true)
     private String nome;
 
-    @OneToMany(mappedBy = "remedio", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Remedio> remedios = new ArrayList<Remedio>();
 
 

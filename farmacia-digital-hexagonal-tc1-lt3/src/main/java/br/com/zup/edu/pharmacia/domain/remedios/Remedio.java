@@ -22,7 +22,7 @@ public class Remedio {
     private Farmaceutica farmaceutica;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categoria", nullable = false)
+    @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 
     private Date dataFabricacao;

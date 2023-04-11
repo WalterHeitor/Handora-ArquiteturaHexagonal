@@ -9,7 +9,7 @@ import java.util.Date;
 
 public record NovoRemedioRequest(
         String nome,
-        Long famaciaId,
+        Long farmaciaId,
         Long categoriaId,
         Date dataFabricacao,
         Date dataValidade
